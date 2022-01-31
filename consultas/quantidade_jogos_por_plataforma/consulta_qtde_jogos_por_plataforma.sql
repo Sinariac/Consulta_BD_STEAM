@@ -1,0 +1,1 @@
+select platforms, count(platforms) as qtde_jogos_para_plataforma from steam group by platforms;
