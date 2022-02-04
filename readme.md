@@ -24,5 +24,93 @@ Projeto de conclusão de módulo do curso de Desenvolvedor Web Full-Stack da Res
    <img  src="./imagens/PowerBI.png" height="50" width="70">
 </div>
 
-# Criação do Banco de Dados
+# Comandos para criação do banco de dados Steam
+
+*Criação do banco*
+```
+CREATE DATABASE `bdsteam`;
+```
+
+*Criação da tabela steam_dados*
+```
+CREATE TABLE `steam_dados` (
+	id INT PRIMARY KEY NOT NULL,
+   nome TEXT,
+   data_lancamento DATE,
+   desenvolvedor VARCHAR(100),
+   plataformas VARCHAR(100),
+   faixa_etaria INT,
+   genero VARCHAR(50),
+   conquistas INT,
+   avaliacoes_positivas BIGINT,
+   avaliacoes_negativas BIGINT,
+   tempo_medio_de_jogo BIGINT,
+   proprietarios VARCHAR(100),
+   preco DOUBLE
+);
+```
+
+*Criação da tabela steam_media*
+```
+CREATE TABLE `steam_media` (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   id_steam_dados INT,
+   filmes VARCHAR(1000),
+   
+   FOREIGN KEY (id_steam_dados) REFERENCES steam_dados(id)
+);
+```
+
+*Criação da tabela steam_suporte*
+```
+CREATE TABLE `steam_suporte` (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_steam_dados INT,
+    suporte_website VARCHAR(300),
+    suporte_url VARCHAR(300),
+    suporte_email VARCHAR(300)
+);
+
+ALTER TABLE steam_suporte ADD FOREIGN KEY(id_steam_dados) REFERENCES steam_dados(id);
+```
+
+*Fonte de dados utilizado nas tabelas*
+```
+steam_dados: "./fonte_de_dados/steam.csv"
+steam_media: "./fonte_de_dados/steam_media_data.csv"
+steam_suporte: "./fonte_de_dados/steam_support_info.csv"
+```
+
+# Imagens do banco de dados
+
+**Tabela steam_dados**
+
+SELECT * FROM `steam_dados`;
+
+![Tabela steam_dados](./imagens/tabela_steam_dados.PNG)
+
+**Tabela steam_media**
+
+SELECT * FROM `steam_media` ORDER BY `filmes` DESC;
+
+![Tabela steam_media](./imagens/tabela_steam_media.PNG)
+
+**Tabela steam_suporte**
+
+SELECT * FROM `steam_suporte` ORDER BY `suporte_website` DESC;
+
+![Tabela steam_suporte](./imagens/tabela_steam_suporte.PNG)
+
+# Dashboards criados
+
+**Quais os maiores desenvolvedores de jogos da Steam**
+
+![Dashboard1](./imagens/grafico_maiores_desenvolvedores_jogos.PNG)
+
+**Quais as plataformas que mais possuem jogos**
+
+![Dashboard1](./imagens/grafico_qtd_jogos_por_plataforma.PNG)
+
+
+
 
