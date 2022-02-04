@@ -1,0 +1,1 @@
+select desenvolvedor, count(desenvolvedor) as qtde_jogos_desenvolvidos from steam_dados group by desenvolvedor order by qtde_jogos_desenvolvidos desc limit 5;
