@@ -1,1 +1,0 @@
-select developer, count(developer) as qtde_jogos_desenvolvidos from steam group by developer order by qtde_jogos_desenvolvidos desc limit 5;
