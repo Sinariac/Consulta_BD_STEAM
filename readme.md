@@ -110,7 +110,3 @@ SELECT * FROM `steam_suporte` ORDER BY `suporte_website` DESC;
 **Quais as plataformas que mais possuem jogos**
 
 ![Dashboard1](./imagens/grafico_qtd_jogos_por_plataforma.PNG)
-
-
-
-
