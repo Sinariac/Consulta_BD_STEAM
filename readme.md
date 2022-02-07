@@ -106,6 +106,18 @@ SELECT \* FROM `steam_suporte` ORDER BY `suporte_website` DESC;
 
 ![Tabela steam_suporte](./imagens/tabela_steam_suporte.PNG)
 
+**Tabela com os cinco maiores desenvolvedores da Steam**
+
+SELECT `desenvolvedor`, COUNT(`desenvolvedor`) AS `qtde_jogos_desenvolvidos` FROM `steam_dados` GROUP BY `desenvolvedor` ORDER BY `qtde_jogos_desenvolvidos` DESC LIMIT 5;
+
+![Tabela com os cinco maiores desenvolvedores da Steam](./imagens/tabela_steam_cinco_maiores_desenvolvedores.png)
+
+**Tabela com a quantidade de jogos desenvolvidos por plataforma**
+
+SELECT `plataformas`, COUNT(`plataformas`) AS `qtde_jogos_para_plataforma` FROM `steam_dados` GROUP BY `plataformas`;
+
+![Tabela com a quantidade de jogos desenvolvidos por plataforma](./imagens/tabela_steam_jogos_desenvolvidos_por_plataforma.png)
+
 **Tabela com os jogos mais jogados por gênero**
 
 SELECT `nome` AS `jogo`, `genero`, `tempo_medio_de_jogo` FROM `steam_dados` ORDER BY `tempo_medio_de_jogo` DESC LIMIT 15;
@@ -158,20 +170,20 @@ GROUP BY `faixa_etaria`;
 
 **Quais as plataformas que mais possuem jogos?**
 
-![Dashboard1](./imagens/grafico_qtd_jogos_por_plataforma.PNG)
+![Dashboard2](./imagens/grafico_qtd_jogos_por_plataforma.PNG)
 
 **Quais os jogos mais jogados por gênero e os menos jogados?**
 
-![Dashboard1](./imagens/grafico_jogos_mais_e_menos_jogados_genero.png)
+![Dashboard3](./imagens/grafico_jogos_mais_e_menos_jogados_genero.png)
 
 **Quais os jogos mais baixados e os jogos com menos adesão?**
 
-![Dashboard1](./imagens/grafico_jogos_mais_e_menos_baixados.png)
+![Dashboard4](./imagens/grafico_jogos_mais_e_menos_baixados.png)
 
 **Quais os jogos com mais e menos conquistas?**
 
-![Dashboard1](./imagens/grafico_jogos_mais_e_menos_conquistas.png)
+![Dashboard5](./imagens/grafico_jogos_mais_e_menos_conquistas.png)
 
 **Quantidade de jogos por faixa etária?**
 
-![Dashboard1](./imagens/grafico_qt_jogos_faixa_etaria.png)
+![Dashboard6](./imagens/grafico_qt_jogos_faixa_etaria.png)
