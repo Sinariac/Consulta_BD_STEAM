@@ -36,19 +36,19 @@ _Criação da tabela steam_dados_
 
 ```
 CREATE TABLE `steam_dados` (
-	id INT PRIMARY KEY NOT NULL,
-   nome TEXT,
-   data_lancamento DATE,
-   desenvolvedor VARCHAR(100),
-   plataformas VARCHAR(100),
-   faixa_etaria INT,
-   genero VARCHAR(50),
-   conquistas INT,
-   avaliacoes_positivas BIGINT,
-   avaliacoes_negativas BIGINT,
-   tempo_medio_de_jogo BIGINT,
-   proprietarios VARCHAR(100),
-   preco DOUBLE
+ id INT PRIMARY KEY NOT NULL,
+ nome TEXT,
+ data_lancamento DATE,
+ desenvolvedor VARCHAR(100),
+ plataformas VARCHAR(100),
+ faixa_etaria INT,
+ genero VARCHAR(50),
+ conquistas INT,
+ avaliacoes_positivas BIGINT,
+ avaliacoes_negativas BIGINT,
+ tempo_medio_de_jogo BIGINT,
+ proprietarios VARCHAR(100),
+ preco DOUBLE
 );
 ```
 
@@ -56,11 +56,11 @@ _Criação da tabela steam_media_
 
 ```
 CREATE TABLE `steam_media` (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-   id_steam_dados INT,
-   filmes VARCHAR(1000),
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+id_steam_dados INT,
+filmes VARCHAR(1000),
 
-   FOREIGN KEY (id_steam_dados) REFERENCES steam_dados(id)
+FOREIGN KEY (id_steam_dados) REFERENCES steam_dados(id)
 );
 ```
 
@@ -68,11 +68,11 @@ _Criação da tabela steam_suporte_
 
 ```
 CREATE TABLE `steam_suporte` (
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    id_steam_dados INT,
-    suporte_website VARCHAR(300),
-    suporte_url VARCHAR(300),
-    suporte_email VARCHAR(300)
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+id_steam_dados INT,
+suporte_website VARCHAR(300),
+suporte_url VARCHAR(300),
+suporte_email VARCHAR(300)
 );
 
 ALTER TABLE steam_suporte ADD FOREIGN KEY(id_steam_dados) REFERENCES steam_dados(id);
@@ -144,20 +144,20 @@ SELECT `nome` AS `jogo`, `genero`, `proprietarios` FROM `steam_dados` HAVING (`p
 
 **Tabela com os jogos com mais conquistas**
 
-SELECT `nome` AS jogo, `conquistas` FROM `steam_dados` ORDER BY `conquistas` DESC LIMIT 10;
+SELECT `nome` AS `jogo`, `conquistas` FROM `steam_dados` ORDER BY `conquistas` DESC LIMIT 10;
 
 ![Tabela Jogos com mais conquistas](./imagens/tabela_steam_jogos_mais_conquistas.png)
 
 **Tabela com os jogos com menos conquistas**
 
-SELECT `nome` AS jogo, `conquistas` FROM `steam_dados` where `conquistas` > 0
+SELECT `nome` AS `jogo`, `conquistas` FROM `steam_dados` where `conquistas` > 0
 ORDER BY `conquistas` LIMIT 10;
 
 ![Tabela Jogos com menos conquistas](./imagens/tabela_steam_jogos_menos_conquistas.png)
 
 **Tabela com os jogos por faixa etária**
 
-SELECT `faixa_etaria`, count(faixa_etaria) FROM `steam_dados` WHERE `faixa_etaria` > 0
+SELECT `faixa_etaria`, COUNT(`faixa_etaria`) FROM `steam_dados` WHERE `faixa_etaria` > 0
 GROUP BY `faixa_etaria`;
 
 ![Tabela Jogos por faixa etária](./imagens/tabela_steam_qt_jogos_faixa_etaria.png)
