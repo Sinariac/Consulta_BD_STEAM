@@ -108,25 +108,25 @@ SELECT \* FROM `steam_suporte` ORDER BY `suporte_website` DESC;
 
 **Tabela com os jogos mais jogados por gênero**
 
-SELECT \* FROM `steam_dados`;
+SELECT `nome` AS `jogo`, `genero`, `tempo_medio_de_jogo` FROM `steam_dados` ORDER BY `tempo_medio_de_jogo` DESC LIMIT 15;
 
 ![Tabela Jogos mais e menos baixados por gênero](./imagens/tabela_steam_genero_mais_jogado.png)
 
 **Tabela com os jogos menos jogados por gênero**
 
-SELECT \* FROM `steam_dados`;
+SELECT `nome` AS `jogo`, `genero`, `tempo_medio_de_jogo` FROM `steam_dados` WHERE `tempo_medio_de_jogo` > 0 ORDER BY `tempo_medio_de_jogo` LIMIT 30;
 
 ![Tabela Jogos mais e menos baixados por gênero](./imagens/tabela_steam_menos_jogado_genero.png)
 
 **Tabela com os jogos mais baixados**
 
-SELECT \* FROM `steam_dados`;
+SELECT `nome` AS `jogo`, `genero`, `proprietarios` FROM `steam_dados` ORDER BY `proprietarios` DESC;
 
 ![Tabela Jogos mais e menos baixados](./imagens/tabela_steam_jogos_mais_baixados.png)
 
 **Tabela com os jogos menor adesão**
 
-SELECT \* FROM `steam_dados`;
+SELECT `nome` AS `jogo`, `genero`, `proprietarios` FROM `steam_dados` HAVING (`proprietarios` <= 100000) ORDER BY `proprietarios`;
 
 ![Tabela Jogos com menor adesão](./imagens/tabela_steam_jogos_menos_baixados.png)
 
