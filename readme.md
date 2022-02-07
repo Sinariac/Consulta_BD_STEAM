@@ -36,19 +36,19 @@ _Criação da tabela steam_dados_
 
 ```
 CREATE TABLE `steam_dados` (
- id INT PRIMARY KEY NOT NULL,
- nome TEXT,
- data_lancamento DATE,
- desenvolvedor VARCHAR(100),
- plataformas VARCHAR(100),
- faixa_etaria INT,
- genero VARCHAR(50),
- conquistas INT,
- avaliacoes_positivas BIGINT,
- avaliacoes_negativas BIGINT,
- tempo_medio_de_jogo BIGINT,
- proprietarios VARCHAR(100),
- preco DOUBLE
+   id INT PRIMARY KEY NOT NULL,
+   nome TEXT,
+   data_lancamento DATE,
+   desenvolvedor VARCHAR(100),
+   plataformas VARCHAR(100),
+   faixa_etaria INT,
+   genero VARCHAR(50),
+   conquistas INT,
+   avaliacoes_positivas BIGINT,
+   avaliacoes_negativas BIGINT,
+   tempo_medio_de_jogo BIGINT,
+   proprietarios VARCHAR(100),
+   preco DOUBLE
 );
 ```
 
@@ -56,9 +56,9 @@ _Criação da tabela steam_media_
 
 ```
 CREATE TABLE `steam_media` (
-id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_steam_dados INT,
-filmes VARCHAR(1000),
+   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   id_steam_dados INT,
+   filmes VARCHAR(1000),
 
 FOREIGN KEY (id_steam_dados) REFERENCES steam_dados(id)
 );
@@ -68,11 +68,11 @@ _Criação da tabela steam_suporte_
 
 ```
 CREATE TABLE `steam_suporte` (
-id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_steam_dados INT,
-suporte_website VARCHAR(300),
-suporte_url VARCHAR(300),
-suporte_email VARCHAR(300)
+   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   id_steam_dados INT,
+   suporte_website VARCHAR(300),
+   suporte_url VARCHAR(300),
+   suporte_email VARCHAR(300)
 );
 
 ALTER TABLE steam_suporte ADD FOREIGN KEY(id_steam_dados) REFERENCES steam_dados(id);
