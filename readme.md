@@ -130,6 +130,26 @@ SELECT `nome` AS `jogo`, `genero`, `proprietarios` FROM `steam_dados` HAVING (`p
 
 ![Tabela Jogos com menor adesão](./imagens/tabela_steam_jogos_menos_baixados.png)
 
+**Tabela com os jogos com mais conquistas**
+
+SELECT `nome` AS jogo, `conquistas` FROM `steam_dados` ORDER BY `conquistas` DESC LIMIT 10;
+
+![Tabela Jogos com mais conquistas](./imagens/tabela_steam_jogos_mais_conquistas.png)
+
+**Tabela com os jogos com menos conquistas**
+
+SELECT `nome` AS jogo, `conquistas` FROM `steam_dados` where `conquistas` > 0
+ORDER BY `conquistas` LIMIT 10;
+
+![Tabela Jogos com menos conquistas](./imagens/tabela_steam_jogos_menos_conquistas.png)
+
+**Tabela com os jogos por faixa etária**
+
+SELECT `faixa_etaria`, count(faixa_etaria) FROM `steam_dados` WHERE `faixa_etaria` > 0
+GROUP BY `faixa_etaria`;
+
+![Tabela Jogos por faixa etária](./imagens/tabela_steam_qt_jogos_faixa_etaria.png)
+
 # Dashboards criados
 
 **Quais os maiores desenvolvedores de jogos da Steam?**
@@ -147,3 +167,11 @@ SELECT `nome` AS `jogo`, `genero`, `proprietarios` FROM `steam_dados` HAVING (`p
 **Quais os jogos mais baixados e os jogos com menos adesão?**
 
 ![Dashboard1](./imagens/grafico_jogos_mais_e_menos_baixados.png)
+
+**Quais os jogos com mais e menos conquistas?**
+
+![Dashboard1](./imagens/grafico_jogos_mais_e_menos_conquistas.png)
+
+**Quantidade de jogos por faixa etária?**
+
+![Dashboard1](./imagens/grafico_qt_jogos_faixa_etaria.png)
