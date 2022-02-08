@@ -52,10 +52,10 @@ CREATE TABLE `steam_dados` (
 );
 ```
 
-_Modelagem da tabela steam_media_
+_Modelagem da tabela steam_midia_
 
 ```
-CREATE TABLE `steam_media` (
+CREATE TABLE `steam_midia` (
    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
    id_steam_dados INT,
    filmes VARCHAR(1000),
