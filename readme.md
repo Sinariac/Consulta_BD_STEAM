@@ -162,6 +162,30 @@ GROUP BY `faixa_etaria`;
 
 ![Tabela Jogos por faixa etária](./imagens/tabela_steam_qt_jogos_faixa_etaria.png)
 
+**Tabela com as avaliações positivas**
+
+ SELECT `nome` AS `jogo`, `avaliacoes_positivas` FROM `steam_dados` ORDER BY `avaliacoes_positivas` DESC LIMIT 5;
+
+![Tabela com as avaliações positivas ](./imagens/tabela_steam_jogos_mais_bem_avaliados.png)
+
+**Tabela com as avaliações negativas**
+
+ SELECT `nome` AS `jogo`, `avaliacoes_negativas` FROM `steam_dados` ORDER BY `avaliacoes_negativas` DESC LIMIT 5;
+
+![Tabela com as avaliações negativas ](./imagens/tabela_steam_jogos_com_piores_avaliações.png)
+
+**Tabela com os jogos mais caros**
+
+ SELECT `nome` AS `jogo`, `preco` FROM `steam_dados` ORDER BY `preco` DESC LIMIT 5;
+
+![Tabela com os jogos mais caros ](./imagens/tabela_steam_cinco_jogos_mais_caros.png)
+
+**Tabela com os jogos mais baratos**
+
+ SELECT `nome` AS `jogo`, `preco` FROM `steam_dados` WHERE `preco` > 0 ORDER BY `preco` LIMIT 5;
+
+![Tabela com os jogos mais baratos ](./imagens/tabela_steam_cinco_jogos_mais_baratos.png)
+
 # Dashboards criados
 
 **Quais os maiores desenvolvedores de jogos da Steam?**
@@ -187,3 +211,11 @@ GROUP BY `faixa_etaria`;
 **Quantidade de jogos por faixa etária?**
 
 ![Dashboard6](./imagens/grafico_qt_jogos_faixa_etaria.png)
+
+**Quais jogos com melhores e piores avaliações?**
+
+![Dashboard7](./imagens/grafico_steam_melhores_piores_avaliações.png)
+
+**Quais os jogos mais caros e mais baratos da plataforma?**
+
+![Dashboard8](./imagens/grafico_jogos_mais_caros_e_mais_baratos.png)
