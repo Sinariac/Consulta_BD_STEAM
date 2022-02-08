@@ -1,3 +1,3 @@
-use `Steam`;
+use `bdsteam`;
 
-select distinct year(`release_date`) as ano_lancamento, count(*) as "quantidade_jogos" from steam group by year(`release_date`) order by year(`release_date`); -- quantidade de jogos lançados por ano
+select distinct year(`data_lancamento`) as ano_lancamento, count(*) as "quantidade_jogos" from steam_dados group by year(`data_lancamento`) order by year(`data_lancamento`); -- quantidade de jogos lançados por ano

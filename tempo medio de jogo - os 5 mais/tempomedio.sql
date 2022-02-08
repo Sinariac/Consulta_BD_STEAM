@@ -1,3 +1,3 @@
-use `Steam`;
+use `bdsteam`;
 
-select average_playtime, name from steam order by average_playtime DESC limit 5; -- os 5 jogos com maior tempo médio de jogo.
+select tempo_medio_de_jogo, nome from steam_dados order by tempo_medio_de_jogo DESC limit 5; -- os 5 jogos com maior tempo médio de jogo.
