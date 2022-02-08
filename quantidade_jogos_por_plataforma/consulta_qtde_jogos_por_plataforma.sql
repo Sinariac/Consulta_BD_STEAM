@@ -1,0 +1,1 @@
+select plataformas, count(plataformas) as qtde_jogos_para_plataforma from steam_dados group by plataformas;

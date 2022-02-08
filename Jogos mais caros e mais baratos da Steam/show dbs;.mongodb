@@ -1,0 +1,43 @@
+show dbs;
+
+use ('T10');
+
+db.createCollection("TemDeTudo");
+
+db.temDeTudo.insertOne([
+  {"nome":"Peter", "raca";"chartreux"}
+  ]);
+
+  db.temDeTudo.find({});
+
+ db.temDeTudo.insertMany([
+  {"nome": "Lassie", "raca" : "Collie"},
+  {"nome" : "Marley", "raca" : "Caramelo"}
+  ]);
+
+db.temDeTudo.deleteOne({"nome" : "Peter"});
+
+db.temDeTudo.find({});
+
+db.temDeTudo.updateOne(
+    {"_id" : ObjectId("61fc54d1918053880eb5f226")},{$set:{nome:"Bingo"}}
+  );
+
+db.temDeTudo.updateMany(
+    {raca : "Caramelo"}, {$set:{raca:"Vira"}}
+  );
+
+db.temDeTudo.deleteOne(
+  {"_id": ObjectId("61fc54aeb10c0c7b8d9cada5")}
+);
+
+db.temDeTudo.deleteMany(
+  {nome: "Marley"}
+);
+
+db.temDeTudo.replaceOne(
+  {"_id": ObjectId("61fc54d1918053880eb5f226")},{nome:"Au au", raca: "viralata"}
+);
+
+db.temDeTudo.updateOne({"_id" : ObjectId(HASH)}, {$set:{nome:"Lassie"},
+     $currentDate: { lastModified: true }})
