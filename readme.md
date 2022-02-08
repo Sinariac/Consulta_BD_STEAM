@@ -24,15 +24,15 @@ Projeto de conclusão de módulo do curso de Desenvolvedor Web Full-Stack da Res
    <img  src="./imagens/PowerBI.png" height="50" width="70">
 </div>
 
-# Comandos para criação do banco de dados Steam
+# Comandos para modelagem do banco de dados Steam
 
-_Criação do banco_
+_Modelagem do banco_
 
 ```
 CREATE DATABASE `bdsteam`;
 ```
 
-_Criação da tabela steam_dados_
+_Modelagem da tabela steam_dados_
 
 ```
 CREATE TABLE `steam_dados` (
@@ -52,7 +52,7 @@ CREATE TABLE `steam_dados` (
 );
 ```
 
-_Criação da tabela steam_media_
+_Modelagem da tabela steam_media_
 
 ```
 CREATE TABLE `steam_media` (
@@ -64,7 +64,7 @@ FOREIGN KEY (id_steam_dados) REFERENCES steam_dados(id)
 );
 ```
 
-_Criação da tabela steam_suporte_
+_Modelagem da tabela steam_suporte_
 
 ```
 CREATE TABLE `steam_suporte` (
@@ -186,6 +186,18 @@ GROUP BY `faixa_etaria`;
 
 ![Tabela com os jogos mais baratos ](./imagens/tabela_steam_cinco_jogos_mais_baratos.png)
 
+**Tabela com a quantidade de jogos lançados por ano**
+
+SELECT DISTINCT YEAR(`data_lancamento`) AS `ano_lancamento`, COUNT(*) AS `quantidade_jogos` FROM `steam_dados` GROUP BY YEAR(`data_lancamento`) ORDER BY YEAR(`data_lancamento`);
+
+![Tabela com a quantidade de jogos lançados por ano ](./imagens/tabela_steam_qnt_jogos_por_ano.png)
+
+**Tabela com o tempo médio de jogo**
+
+SELECT `tempo_medio_de_jogo`, `nome` FROM `steam_dados` ORDER BY `tempo_medio_de_jogo` DESC LIMIT 5;
+
+![Tabela com o tempo médio de jogo ](./imagens/tabela_steam_tempo_medio_jogo.png)
+
 # Dashboards criados
 
 **Quais os maiores desenvolvedores de jogos da Steam?**
@@ -219,3 +231,11 @@ GROUP BY `faixa_etaria`;
 **Quais os jogos mais caros e mais baratos da plataforma?**
 
 ![Dashboard8](./imagens/grafico_jogos_mais_caros_e_mais_baratos.png)
+
+**Qual a quantidade de jogos lançados por ano**
+
+![Dashboard9](./imagens/grafico_qtd_jogos_por_ano.png)
+
+**Quais os 5 jogos com o maior tempo médio de jogo**
+
+![Dashboard10](./imagens/grafico_jogos_maior_tempo_medio.png)
