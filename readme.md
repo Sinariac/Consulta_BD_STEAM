@@ -1,4 +1,4 @@
-# Projeto consulta BD STEAM (em construção)
+# Projeto consulta BD STEAM
 
 Projeto de conclusão de módulo do curso de Desenvolvedor Web Full-Stack da Resilia Educação.
 
@@ -86,6 +86,12 @@ steam_media: "./fonte_de_dados/steam_media_data.csv"
 steam_suporte: "./fonte_de_dados/steam_support_info.csv"
 ```
 
+_Graficos criados no Power BI:_
+
+```
+"./fonte_de_dados/graficos_do_projeto_final.pbix"
+```
+
 # Imagens do banco de dados
 
 **Tabela steam_dados**
@@ -164,31 +170,31 @@ GROUP BY `faixa_etaria`;
 
 **Tabela com as avaliações positivas**
 
- SELECT `nome` AS `jogo`, `avaliacoes_positivas` FROM `steam_dados` ORDER BY `avaliacoes_positivas` DESC LIMIT 5;
+SELECT `nome` AS `jogo`, `avaliacoes_positivas` FROM `steam_dados` ORDER BY `avaliacoes_positivas` DESC LIMIT 5;
 
 ![Tabela com as avaliações positivas ](./imagens/tabela_steam_jogos_mais_bem_avaliados.png)
 
 **Tabela com as avaliações negativas**
 
- SELECT `nome` AS `jogo`, `avaliacoes_negativas` FROM `steam_dados` ORDER BY `avaliacoes_negativas` DESC LIMIT 5;
+SELECT `nome` AS `jogo`, `avaliacoes_negativas` FROM `steam_dados` ORDER BY `avaliacoes_negativas` DESC LIMIT 5;
 
 ![Tabela com as avaliações negativas ](./imagens/tabela_steam_jogos_com_piores_avaliações.png)
 
 **Tabela com os jogos mais caros**
 
- SELECT `nome` AS `jogo`, `preco` FROM `steam_dados` ORDER BY `preco` DESC LIMIT 5;
+SELECT `nome` AS `jogo`, `preco` FROM `steam_dados` ORDER BY `preco` DESC LIMIT 5;
 
 ![Tabela com os jogos mais caros ](./imagens/tabela_steam_cinco_jogos_mais_caros.png)
 
 **Tabela com os jogos mais baratos**
 
- SELECT `nome` AS `jogo`, `preco` FROM `steam_dados` WHERE `preco` > 0 ORDER BY `preco` LIMIT 5;
+SELECT `nome` AS `jogo`, `preco` FROM `steam_dados` WHERE `preco` > 0 ORDER BY `preco` LIMIT 5;
 
 ![Tabela com os jogos mais baratos ](./imagens/tabela_steam_cinco_jogos_mais_baratos.png)
 
 **Tabela com a quantidade de jogos lançados por ano**
 
-SELECT DISTINCT YEAR(`data_lancamento`) AS `ano_lancamento`, COUNT(*) AS `quantidade_jogos` FROM `steam_dados` GROUP BY YEAR(`data_lancamento`) ORDER BY YEAR(`data_lancamento`);
+SELECT DISTINCT YEAR(`data_lancamento`) AS `ano_lancamento`, COUNT(\*) AS `quantidade_jogos` FROM `steam_dados` GROUP BY YEAR(`data_lancamento`) ORDER BY YEAR(`data_lancamento`);
 
 ![Tabela com a quantidade de jogos lançados por ano ](./imagens/tabela_steam_qnt_jogos_por_ano.png)
 
@@ -214,7 +220,7 @@ SELECT `tempo_medio_de_jogo`, `nome` FROM `steam_dados` ORDER BY `tempo_medio_de
 
 **Quais os jogos mais baixados e os jogos com menos adesão?**
 
-![Dashboard4](./imagens/grafico_jogos_mais_e_menos_baixados.png)
+![Dashboard4](./imagens/grafico_jogoEmais_baixado.png)
 
 **Quais os jogos com mais e menos conquistas?**
 
@@ -239,3 +245,7 @@ SELECT `tempo_medio_de_jogo`, `nome` FROM `steam_dados` ORDER BY `tempo_medio_de
 **Quais os 5 jogos com o maior tempo médio de jogo**
 
 ![Dashboard10](./imagens/grafico_jogos_maior_tempo_medio.png)
+
+```
+
+```
