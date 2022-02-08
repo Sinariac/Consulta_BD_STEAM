@@ -100,11 +100,11 @@ SELECT \* FROM `steam_dados`;
 
 ![Tabela steam_dados](./imagens/tabela_steam_dados.PNG)
 
-**Tabela steam_media**
+**Tabela steam_midia**
 
-SELECT \* FROM `steam_media` ORDER BY `filmes` DESC;
+SELECT \* FROM `steam_midia` ORDER BY `filmes` DESC;
 
-![Tabela steam_media](./imagens/tabela_steam_media.PNG)
+![Tabela steam_midia](./imagens/tabela_steam_media.PNG)
 
 **Tabela steam_suporte**
 
@@ -245,7 +245,3 @@ SELECT `tempo_medio_de_jogo`, `nome` FROM `steam_dados` ORDER BY `tempo_medio_de
 **Quais os 5 jogos com o maior tempo médio de jogo**
 
 ![Dashboard10](./imagens/grafico_jogos_maior_tempo_medio.png)
-
-```
-
-```
